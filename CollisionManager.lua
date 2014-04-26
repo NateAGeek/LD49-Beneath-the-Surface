@@ -41,7 +41,7 @@ CollisionManager.new = function(settings)
       mapLY = math.floor((y+height)/(collisionMapTileHeight*collisionMapTileScale))
       --print("X: "..x..", Y: "..y)
 
-      if staticCollisionMap[mapLX][mapTY] == 1 or staticCollisionMap[mapRX][mapTY] == 1 or staticCollisionMap[mapLX][mapLY] == 1 then
+      if staticCollisionMap[mapLX][mapTY] == 1 or staticCollisionMap[mapRX][mapTY] == 1 or staticCollisionMap[mapLX][mapLY] == 1 or staticCollisionMap[mapRX][mapLY] == 1 then
         --print("MapLX: "..mapLX..", MapTR: "..mapRX..", MapTY: "..mapTY..", MapLY: "..mapLY..", Hit: TRUE")
         return true
       else

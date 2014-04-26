@@ -4,12 +4,13 @@ require"CollisionManager"
 require"EntityManager"
 require"CameraControls"
 
-Level = {}
-Collision = {}
-EntityMan = {}
-Camera = {}
+Level = nil
+Collision = nil
+EntityMan = nil
+Camera = nil
 
-Player = {}
+Player = nil
+Canvas = nil
 
 LevelManager.new = function(lid)
   local obj = {}
@@ -18,6 +19,7 @@ LevelManager.new = function(lid)
   Collision = CollisionManager.new(Settings)
   EntityMan = EntityManager.new(Settings)
   Camera = CameraControls.new(Settings)
+  Canvas = love.graphics.newCanvas()
 
   obj.load = function()
     Level.load()
@@ -33,9 +35,20 @@ LevelManager.new = function(lid)
 
   obj.draw = function()
     Camera.moveCenter(-Player.getX()-(Player.getWidth()/2), -Player.getY()-(Player.getHeight()/2))
-    Level.draw()
-    EntityMan.draw()
+    love.graphics.setCanvas(Canvas)
+      Canvas:clear()
+        Level.draw()
+        EntityMan.draw()
+      love.graphics.draw(Canvas)
+    love.graphics.setCanvas()
   end
 
   return obj
+end
+
+function love.keypressed(key, isrepeat)
+  if key == "w" and Player.onGround() then
+    Player.jump()
+  end
+
 end
