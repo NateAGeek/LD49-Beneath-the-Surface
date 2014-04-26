@@ -34,13 +34,13 @@ LevelManager.new = function(lid)
   end
 
   obj.draw = function()
-    Camera.moveCenter(-Player.getX()-(Player.getWidth()/2), -Player.getY()-(Player.getHeight()/2))
     love.graphics.setCanvas(Canvas)
       Canvas:clear()
         Level.draw()
         EntityMan.draw()
-      love.graphics.draw(Canvas)
+        Camera.moveCenter(-Player.getX()-(Player.getWidth()/2), -Player.getY()-(Player.getHeight()/2))
     love.graphics.setCanvas()
+    love.graphics.draw(Canvas)
   end
 
   return obj
