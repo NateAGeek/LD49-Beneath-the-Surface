@@ -1,0 +1,15 @@
+return {
+  map = "levels/1/map.png",
+  entitymap = "levels/1/entitymap.png",
+  collisionmap = "levels/1/collisionmap.png",
+  collisionTileWidth = 32,
+  collisionTileHeight = 32,
+  collisionTileScale = 2,
+  tile = "GFX/TextureTiles.png",
+  TileWidth = 32,
+  TileHeight = 32,
+  TileScaleX = 2,
+  TileScaleY = 2,
+  PlayerSpawnX = 100,
+  PlayerSpawnY = 100,
+}
