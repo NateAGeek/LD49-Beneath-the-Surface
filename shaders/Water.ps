@@ -1,0 +1,20 @@
+extern number time;
+//extern vec2 Player_pos;
+extern Image WaterMap;
+
+vec4 effect( vec4 color, Image texture, vec2 texture_coords, vec2 screen_coords )
+{
+    vec4 texcolor = Texel(WaterMap, screen_coords);
+    if(texcolor == vec4(1.0)){
+      vec2 wave;
+
+      wave.x = 0.0;
+      wave.y = sin(time + texture_coords.y * 350.0);
+      wave *= texture_coords.y / 100.0;
+
+      vec4 pixel = Texel(texture, vec2(texture_coords.x, 1.065 - texture_coords.y) + wave);
+      return mix(pixel, vec4(0.584, 0.819, 0.89, 0.8), 0.8);
+    }
+    texcolor = Texel(texture, texture_coords);
+    return texcolor;
+}

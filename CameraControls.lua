@@ -31,7 +31,5 @@ CameraControls.new = function(settings)
     love.graphics.origin()
   end
 
-
-
   return obj
 end

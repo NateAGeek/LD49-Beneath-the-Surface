@@ -2,6 +2,7 @@ return {
   map = "levels/1/map.png",
   entitymap = "levels/1/entitymap.png",
   collisionmap = "levels/1/collisionmap.png",
+  WaterMap = "levels/1/WaterMap.png",
   collisionTileWidth = 32,
   collisionTileHeight = 32,
   collisionTileScale = 3,

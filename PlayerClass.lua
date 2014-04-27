@@ -66,10 +66,8 @@ PlayerClass.new = function(init_x, init_y)
 
     DirectionSine.x = 0
     if vel.y > 0 then
-      print("GOING DOWN: "..y)
       DirectionSine.y = 1
     else
-      print("GOING UP: "..y)
       DirectionSine.y = -1
     end
 
@@ -145,7 +143,7 @@ PlayerClass.new = function(init_x, init_y)
   end
 
   obj.jump = function()
-    vel.y = -250
+    vel.y = -500
     onGround = false
   end
 
