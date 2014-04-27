@@ -29,7 +29,7 @@ LevelManager.new = function(lid)
     Collision.loadStaticMap()
     EntityMan.load()
     Player = EntityMan.getPlayer()
-    WaterShader:send("WaterMap", WaterShaderMap)
+    --WaterShader:send("WaterMap", WaterShaderMap)
   end
 
   obj.update = function(dt)
